@@ -17,12 +17,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1548
-		/// <summary>
-		/// Note:  This member does not require a call to the server or the DB.
-		/// </summary>
-		//public string Name { get { return GetMember<string>("Name"); } }
-
 		public int Quantity { get { return GetMember<int>("Quantity"); } }
 
 		/// <summary>
@@ -45,7 +39,6 @@ namespace Aion.isxAion
 		public bool IsReady { get { return GetMember<bool>("IsReady"); } }
 
 		public ItemInfo ItemInfo { get { return new ItemInfo(GetMember("ItemInfo")); } }
-		#endregion
 		#endregion
 
 		#region Methods

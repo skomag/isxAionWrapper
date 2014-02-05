@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1378
 		/// <summary>
 		/// typically "OK", "Yes", etc.
 		/// isxAion will ensure that the window is OPEN before returning
@@ -39,7 +38,6 @@ namespace Aion.isxAion
 		/// isxAion will ensure that the window is OPEN before returning
 		/// </summary>
 		public AionUIText Text { get { return new AionUIText(GetMember("Text")); } }
-		#endregion
 		#endregion
 
 		#region Methods

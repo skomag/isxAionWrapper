@@ -22,13 +22,11 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1979
 		public AionUIText Text { get { return new AionUIText(GetMember("Text")); } }
 
 		public AionButton Button1 { get { return new AionButton(GetMember("Button1")); } }
 
 		public AionButton Button2 { get { return new AionButton(GetMember("Button2")); } }
-		#endregion
 		#endregion
 
 		#region Methods

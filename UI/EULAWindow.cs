@@ -22,9 +22,7 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1735
 		public AionButton Accept { get { return new AionButton(GetMember("Accept")); } }
-		#endregion
 		#endregion
 
 		#region Methods

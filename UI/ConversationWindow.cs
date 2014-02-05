@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1872
 		public int NumResponses { get { return GetMember<int>("NumResponses"); } }
 
 		/// <summary>
@@ -37,9 +36,7 @@ namespace Aion.isxAion
 		{
 			return new AionButton(GetMember("Response", label));
 		}
-		#endregion
 
-		#region isxAion-20130130.1863
 		public int NumButtons { get { return GetMember<int>("NumButtons"); } }
 
 		/// <summary>
@@ -57,10 +54,8 @@ namespace Aion.isxAion
 
 		public AionUIText Dialog { get { return new AionUIText(GetMember("Dialog")); } }
 		#endregion
-		#endregion
 
 		#region Methods
-		#region isxAion-20130130.1882
 		/// <summary>
 		/// This method will enable all of the buttons on the window, avoiding the need for the player to "scroll down" the
 		/// text just to click Accept/OK.  However, at this point, isxAion does not handle quest reward selection, so care should
@@ -71,7 +66,6 @@ namespace Aion.isxAion
 		{
 			return ExecuteMethod("EnableAllButtons");
 		}
-		#endregion
 		#endregion
 	}
 }

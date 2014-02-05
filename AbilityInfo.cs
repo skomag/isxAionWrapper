@@ -17,7 +17,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1099
 		public int ID { get { return GetMember<int>("ID"); } }
 
 		/// <summary>
@@ -70,7 +69,6 @@ namespace Aion.isxAion
 		{
 			return GetMember<string>("GetFieldValue", fieldName);
 		}
-		#endregion
 		#endregion
 
 		#region Methods

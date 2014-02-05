@@ -17,13 +17,11 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1407
 		public int Index { get { return GetMember<int>("Index"); } }
 
 		public int Quantity { get { return GetMember<int>("Quantity"); } }
 
 		public ItemInfo ItemInfo { get { return new ItemInfo(GetMember("ItemInfo")); } }
-		#endregion
 		#endregion
 
 		#region Methods

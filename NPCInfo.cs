@@ -17,14 +17,11 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1948
 		/// <summary>
 		/// This is the "ID" used in client_npcs.xml
 		/// </summary>
 		public int SubTypeID { get { return GetMember<int>("SubTypeID"); } }
-		#endregion
 
-		#region isxAion-1.5.1.7.0151
 		public int ID { get { return GetMember<int>("ID"); } }
 
 		public string Description { get { return GetMember<string>("Description"); } }
@@ -97,7 +94,6 @@ namespace Aion.isxAion
 		public string UserAnimation { get { return GetMember<string>("UserAnimation"); } }
 
 		public string SpawnAnimation { get { return GetMember<string>("SpawnAnimation"); } }
-		#endregion
 		#endregion
 
 		#region Methods

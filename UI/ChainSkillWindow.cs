@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1568
 		/// <summary>
 		/// returns the number of skills currently visible
 		/// </summary>
@@ -40,7 +39,6 @@ namespace Aion.isxAion
 		{
 			return new ChainSkill(GetMember("Skill", "id", skillID.ToString()));
 		}
-		#endregion
 		#endregion
 
 		#region Methods

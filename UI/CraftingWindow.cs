@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130626.0193
 		public AionButton CraftAll { get { return new AionButton(GetMember("CraftAll")); } }
 
 		public ListItem Product { get { return new ListItem(GetMember("Product")); } }
@@ -33,7 +32,6 @@ namespace Aion.isxAion
 		}
 
 		public AionWidget WorkOrderList { get { return new AionWidget(GetMember("WorkOrderList")); } }
-		#endregion
 		#endregion
 
 		#region Methods

@@ -7,19 +7,20 @@ using LavishScriptAPI;
 
 namespace Aion.isxAion
 {
-	public class Inventory : LavishScriptObject
+	public class AionUIText : AionWidget
 	{
 		#region Constructors
-		public Inventory(LavishScriptObject Obj)
+		public AionUIText(LavishScriptObject Obj)
 			: base(Obj)
 		{
 		}
 		#endregion
 
 		#region Members
-		public int Used { get { return GetMember<int>("Used"); } }
-
-		public int Size { get { return GetMember<int>("Size"); } }
+		/// <summary>
+		/// no html parsing, etc.
+		/// </summary>
+		public string Raw { get { return GetMember<string>("Raw"); } }
 		#endregion
 
 		#region Methods

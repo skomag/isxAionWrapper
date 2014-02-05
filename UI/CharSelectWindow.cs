@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1792
 		public AionButton Start { get { return new AionButton(GetMember("Start")); } }
 
 		public AionButton Character(int id)
@@ -34,7 +33,6 @@ namespace Aion.isxAion
 		{
 			return new AionButton(GetMember("Character", name));
 		}
-		#endregion
 		#endregion
 
 		#region Methods

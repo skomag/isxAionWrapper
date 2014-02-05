@@ -17,13 +17,11 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.0975
 		public int Size { get { return GetMember<int>("Size"); } }
 
 		public uint LeaderID { get { return GetMember<uint>("LeaderID"); } }
 
 		public Entity Leader { get { return GetMember<Entity>("Leader"); } }
-		#endregion
 		#endregion
 
 		#region Methods

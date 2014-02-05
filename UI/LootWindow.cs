@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1407
 		public int LootCount { get { return GetMember<int>("LootCount"); } }
 
 		/// <summary>
@@ -37,7 +36,6 @@ namespace Aion.isxAion
 		/// typically "Loot All" or "Cancel", depending upon whether loot is available
 		/// </summary>
 		public AionButton Button1 { get { return new AionButton(GetMember("Button1")); } }
-		#endregion
 		#endregion
 
 		#region Methods

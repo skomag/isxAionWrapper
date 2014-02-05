@@ -17,7 +17,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.0975
 		public int MaxMP { get { return GetMember<int>("MaxMP"); } }
 
 		public int MP { get { return GetMember<int>("MP"); } }
@@ -31,19 +30,6 @@ namespace Aion.isxAion
 		public bool OutOfRange { get { return GetMember<bool>("OutOfRange"); } }
 
 		public bool Linkdead { get { return GetMember<bool>("Linkdead"); } }
-
-		//isxAion-20130130.1433 NumBuffs moved to Entity
-		//public int NumBuffs { get { return GetMember<int>("NumBuffs"); } }
-
-		//isxAion-20130130.1433 Buff moved to Entity
-		///// <summary>
-		///// index is between 1 and groupmember.NumBuffs
-		///// </summary>
-		//public Buff Buff(int index)
-		//{
-		//	return new Buff(GetMember("Buff", index.ToString()));
-		//}
-		#endregion
 		#endregion
 
 		#region Methods

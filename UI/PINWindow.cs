@@ -22,7 +22,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1792
 		/// <summary>
 		/// number can be 0-9 or -1 for C
 		/// </summary>
@@ -37,7 +36,6 @@ namespace Aion.isxAion
 		public AionButton OK { get { return new AionButton(GetMember("OK")); } }
 
 		public AionButton Cancel { get { return new AionButton(GetMember("Cancel")); } }
-		#endregion
 		#endregion
 
 		#region Methods

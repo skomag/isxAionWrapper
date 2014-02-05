@@ -7,22 +7,17 @@ using LavishScriptAPI;
 
 namespace Aion.isxAion
 {
-	public class AionUIText : AionWidget
+	public class AionWindow : LavishScriptObject
 	{
 		#region Constructors
-		public AionUIText(LavishScriptObject Obj)
+		public AionWindow(LavishScriptObject Obj)
 			: base(Obj)
 		{
 		}
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1378
-		/// <summary>
-		/// no html parsing, etc.
-		/// </summary>
-		public string Raw { get { return GetMember<string>("Raw"); } }
-		#endregion
+		public bool IsOpen { get { return GetMember<bool>("IsOpen"); } }
 		#endregion
 
 		#region Methods

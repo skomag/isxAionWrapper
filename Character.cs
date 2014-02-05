@@ -22,17 +22,12 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1907
 		public Entity Following { get { return new Entity(GetMember("Following")); } }
 
 		public uint FollowingID { get { return GetMember<uint>("FollowingID", "ID"); } }
-		#endregion
 
-		#region isxAion-20130130.1751
 		public bool OnFastTrackServer { get { return GetMember<bool>("OnFastTrackServer"); } }
-		#endregion
 
-		#region isxAion-20130130.1548
 		public Inventory Inventory { get { return new Inventory(GetMember("Inventory")); } }
 
 		/// <summary>
@@ -160,16 +155,12 @@ namespace Aion.isxAion
 		{
 			return new InventoryItem(GetMember("Warehouse", "NameContains", partialName.ToString()));
 		}
-		#endregion
 
-		#region isxAion-20130130.1548
 		/// <summary>
 		/// Flight time percent
 		/// </summary>
 		public float FlightTimePct { get { return GetMember<float>("FlightTime", "pct"); } }
-		#endregion
 
-		#region isxAion-20130130.1433
 		/// <summary>
 		/// Mana percent
 		/// </summary>
@@ -185,21 +176,13 @@ namespace Aion.isxAion
 		/// </summary>
 		public float DPPct { get { return GetMember<float>("DP", "pct"); } }
 
-		//isxAion-20130130.1433 Moved the "IsFollowing" MEMBER from the 'entity' datatype to the 'character' datatype
-		/// <summary>
-		/// Returns TRUE if the entity is a PC and is currently auto-following another PC.
-		/// </summary>
 		public bool IsFollowing { get { return GetMember<bool>("IsFollowing"); } }
-		#endregion
 
-		#region isxAion-20130130.1159
 		/// <summary>
 		/// TRUE while the "gathering window" is visible
 		/// </summary>
 		public bool IsGathering { get { return GetMember<bool>("IsGathering"); } }
-		#endregion
 
-		#region isxAion-20130130.0975
 		public Group Group { get { return new Group(GetMember("Group")); } }
 
 		/// <summary>
@@ -218,14 +201,7 @@ namespace Aion.isxAion
 		{
 			return new GroupMember(GetMember("Group", name.ToString()));
 		}
-		#endregion
 
-		#region isxAion-20130130.0971
-		//isxAion-20130130.1808 IsGliding moved to Entity
-		//public bool IsGliding { get { return GetMember<bool>("IsGliding"); } }
-		#endregion
-
-		#region isxAion-20130130.0949
 		public int NumAbilities { get { return GetMember<int>("NumAbilities"); } }
 
 		/// <summary>
@@ -256,38 +232,6 @@ namespace Aion.isxAion
 		{
 			return new Ability(GetMember("Ability", abilityName.ToString()));
 		}
-		#endregion
-
-		#region isxAion-20130130.0912
-		// isxAion-20130130.0971 Removed the "Following" MEMBER from the 'character' datatype.
-		//public bool Following
-		//{
-		//	get
-		//	{
-		//		return GetMember<bool>("Following");
-		//	}
-		//}
-		// isxAion-20130130.0971 Removed the "GroupLeaderID" MEMBER from the 'character' datatype.
-		//public uint GroupLeaderID
-		//{
-		//	get
-		//	{
-		//		return GetMember<uint>("GroupLeaderID");
-		//	}
-		//}		
-		#endregion
-        #region isxAion-1.5.1.4.0194
-		//isxAion-20130626.0128 Removed the "CastTimeRemaining" MEMBER of the 'character' datatype.
-		///// <summary>
-		///// Seconds remaining on the current spell/ability cast
-		///// </summary>
-		//public float CastTimeRemaining
-		//{
-		//	get
-		//	{
-		//		return GetMember<float>("CastTimeRemaining");
-		//	}
-		//}
 
         /// <summary>
         /// Seconds you have been casting the current spell/ability
@@ -299,25 +243,6 @@ namespace Aion.isxAion
                 return GetMember<float>("CastTimeSoFar");
             }
         }
-        #endregion
-        #region isxAion-1.5.1.4.0074
-		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
-		//public int HP
-		//{
-		//	get
-		//	{
-		//		return GetMember<int>("HP");
-		//	}
-		//}
-
-		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
-		//public int MaxHP
-		//{
-		//	get
-		//	{
-		//		return GetMember<int>("MaxHP");
-		//	}
-		//}
 
         public int MP
         {
@@ -391,15 +316,6 @@ namespace Aion.isxAion
             }
         }
 
-		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
-		//public int Level
-		//{
-		//	get
-		//	{
-		//		return GetMember<int>("Level");
-		///	}
-		//}
-
         public int Kinah
         {
             get
@@ -444,26 +360,7 @@ namespace Aion.isxAion
         }
         #endregion
 
-		// isxAion-20130130.0912 Removed the "ToEntity" MEMBER of the 'character' datatype.
-		//public Entity ToEntity
-		//{
-		//	get
-		//	{
-		//		return new Entity(GetMember("ToEntity"));
-		//	}
-		//}
-		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
-		//public Entity Target
-		//{
-		//	get
-		//	{
-		//		return new Entity(GetMember("Target"));
-		//	}
-		//}
-        #endregion
-
 		#region Methods
-		#region isxAion-20130130.1907
 		/// <summary>
 		/// It is safe to use this method at any point.  If the character is not currently on 'auto follow' the method will do nothing.
 		/// </summary>
@@ -472,9 +369,7 @@ namespace Aion.isxAion
 		{
 			return ExecuteMethod("StopAutoFollow");
 		}
-		#endregion
 
-		#region isxAion-20130130.1839
 		public bool Quit()
 		{
 			return ExecuteMethod("Quit");
@@ -489,9 +384,7 @@ namespace Aion.isxAion
 		{
 			return ExecuteMethod("Characters");
 		}
-		#endregion
 
-		#region isxAion-20130130.1751
 		/// <summary>
 		///  This method will avoid the annoying popup window; however, it will still do all of the appropriate checks.
 		///  Therefore, the script will need to check for failure by accessing entity.IsMentor.
@@ -509,9 +402,7 @@ namespace Aion.isxAion
 		{
 			return ExecuteMethod("StopMentoring");
 		}
-		#endregion
 
-		#region isxAion-20130130.0912
 		/// <summary>
 		/// Toggle auto-follow on your current target
 		/// </summary>
@@ -550,8 +441,7 @@ namespace Aion.isxAion
 			else
 				return ExecuteMethod("ClickTarget");
 		}
-		#endregion
-		#region isxAion-1.5.1.4.0236
+
 		/// <summary>
 		/// 'uses' the ability (in your abilities list) called "Toggle Rest"
 		/// </summary>
@@ -575,9 +465,8 @@ namespace Aion.isxAion
         {
             return ExecuteMethod("ChangeWeapon");
         }
-        #endregion
-        #region isxAion-1.5.1.4.0116
-        public bool ClearTarget()
+
+		public bool ClearTarget()
         {
             return ExecuteMethod("ClearTarget");
         }
@@ -642,7 +531,6 @@ namespace Aion.isxAion
         {
             return ExecuteMethod("Land");
         }
-        #endregion
         #endregion
 	}
 

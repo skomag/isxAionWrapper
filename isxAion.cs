@@ -21,9 +21,7 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.0912
 		public bool IsIgnoringChatsWithInvalidChars { get { return GetMember<bool>("IsIgnoringChatsWithInvalidChars"); } }
-		#endregion
 
 		public string Version
 		{
@@ -103,7 +101,6 @@ namespace Aion.isxAion
             return ExecuteMethod("RebuildDB");
         }
 
-		#region isxAion-20130130.0912
 		/// <summary>
 		/// [This method will toggle on or off a feature that blocks any incoming chat that contains character symbols that
 		///  are considered invalid.  This includes any ascii character above 0xff except asian characters and Aion's custom
@@ -115,7 +112,6 @@ namespace Aion.isxAion
 		{
 			return ExecuteMethod("IgnoreChatsWithInvalidChars");
 		}
-		#endregion
 		#endregion
 	}
 }

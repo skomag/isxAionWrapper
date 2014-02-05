@@ -33,15 +33,10 @@ namespace Aion.isxAion
 
 
         #region Members
-		#region isxAion-20130626.0193
 		public bool IsCrafting { get { return GetMember<bool>("IsCrafting"); } }
-		#endregion
 
-		#region isxAion-20130130.1965
 		public Entity Pet { get { return new Entity(GetMember("Pet")); } }
-		#endregion
 
-		#region isxAion-20130130.1808
 		/// <summary>
 		/// Pleae note that this will not be TRUE if you're on a moving transport (elevator, etc.)
 		/// </summary>
@@ -66,20 +61,14 @@ namespace Aion.isxAion
 		/// i.e., taking a ride via the "Flight Transporter"
 		/// </summary>
 		public bool IsInFlightTransport { get { return GetMember<bool>("IsInFlightTransport"); } }
-		#endregion
 
-		#region isxAion-20130130.1751
 		public bool IsMentor { get { return GetMember<bool>("IsMentor"); } }
-		#endregion
 
-		#region isxAion-20130130.1465
 		public Buff BuffByID(int abilityID)
 		{
 			return new Buff(GetMember("Buff", "id", abilityID.ToString()));
 		}
-		#endregion
 
-		#region isxAion-20130130.1433
 		/// <summary>
 		/// Health percent
 		/// </summary>
@@ -94,17 +83,7 @@ namespace Aion.isxAion
 		{
 			return new Buff(GetMember("Buff", index.ToString()));
 		}
-		#endregion
 
-		#region isxAion-20130130.0971
-		//isxAion-20130130.1433 Moved the "IsFollowing" MEMBER from the 'entity' datatype to the 'character' datatype
-		///// <summary>
-		///// Returns TRUE if the entity is a PC and is currently auto-following another PC.
-		///// </summary>
-		//public bool IsFollowing { get { return GetMember<bool>("IsFollowing"); } }
-		#endregion
-
-		#region isxAion-20130130.0912
 		public string LocationLink { get { return GetMember<string>("LocationLink"); } }
 
 		/// <summary>
@@ -113,19 +92,9 @@ namespace Aion.isxAion
 		/// actually point to the nearest entity that matches the 'type' of the one you used to create the link.
 		/// </summary>
 		public string WhereLink { get { return GetMember<string>("WhereLink"); } }
-		#endregion
 
-		#region isxAion-1.5.1.7.0151
 		public GatherData GatherData { get { return new GatherData(GetMember("GatherData")); } }
 
-		// isxAion-20130130.1099 Removed the "NPCInfo" MEMBER of the 'entity' datatype.
-		///// <summary>
-		///// returns NULL for entities without the relevant NPCInfo data
-		///// </summary>
-		//public NPCInfo NPCInfo { get { return GetMember<NPCInfo>("NPCInfo"); } }
-		#endregion
-
-		#region isxAion-1.5.1.4.0194
 		public AbyssRank AbyssRank
         {
             get
@@ -133,9 +102,8 @@ namespace Aion.isxAion
                 return new AbyssRank(GetMember("AbyssRank"));
             }
         }
-        #endregion
-        #region isxAion-1.5.1.4.0137
-        /// <summary>
+
+		/// <summary>
         /// Used primarily to indicate PCs on your faction 
         /// </summary>
         public bool IsFriendly
@@ -224,10 +192,8 @@ namespace Aion.isxAion
                 return GetMember<string>("Class");
             }
         }
-        #endregion
 
-        #region isxAion-1.5.1.4.0116
-        /// <summary>
+		/// <summary>
         /// 'FALSE' on non-gatherables and gatherables for which your skill is too low 
         /// </summary>
         public bool CanGather
@@ -298,11 +264,6 @@ namespace Aion.isxAion
             }
         }
 
-        #endregion
-        #region isxAion-1.5.1.4.0074
-        /// <summary>
-        /// 
-        /// </summary>
         public bool IsAggro
         {
             get
@@ -310,10 +271,8 @@ namespace Aion.isxAion
                 return GetMember<bool>("IsAggro");
             }
         }
-        #endregion
 
-        #region isxAion-1.0.5.11.0601
-        /// <summary>
+		/// <summary>
         /// This is a signed integer!  Most NPCs/PCs have negative EntityIDs. All entities have an "EntityID" while only spawns capable of true interaction have an "ID".
         /// </summary>
         public int EntityID
@@ -323,24 +282,8 @@ namespace Aion.isxAion
                 return GetMember<int>("EntityID");
             }
         }
-        #endregion
-		// isxAion-20130130.1099 The 'entity' datatype now inherits all members/methods of the 'npcinfo' datatype
-        //public uint ID
-        //{
-        //    get
-        //    {
-        //        return GetMember<uint>("ID");
-        //    }
-        //}
-		// isxAion-20130130.1099 The 'entity' datatype now inherits all members/methods of the 'npcinfo' datatype
-        //public string Name
-        //{
-        //    get
-        //    {
-        //        return GetMember<string>("Name");
-        //    }
-        //}
-        /// <summary>
+
+		/// <summary>
         /// Possible Types (as of 11/2009):  Me, NPC, PC, Resource, Special, Unknown, Chair, Birds, SoundSpot, Random Ambient Sound, Bugs, Portal, Object, Milestone, Pet, ToyPet
         /// </summary>
         public string Type
@@ -476,19 +419,15 @@ namespace Aion.isxAion
         #endregion
 
         #region Methods
-		#region isxAion-20130130.0912
 		public bool Follow()
 		{
 			return ExecuteMethod("Follow");
 		}
-		#endregion
 
-		#region isxAion-1.5.1.4.0116
 		public bool DoTarget()
         {
             return ExecuteMethod("DoTarget");
         }
-        #endregion
         #endregion
     }
 }

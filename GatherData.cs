@@ -17,7 +17,6 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-1.5.1.7.0151
 		public int ID { get { return GetMember<int>("ID"); } }
 
 		public string SourceType { get { return GetMember<string>("SourceType"); } }
@@ -51,7 +50,6 @@ namespace Aion.isxAion
 		public int AerialAdj { get { return GetMember<int>("AerialAdj"); } }
 
 		public int CaptchaRate { get { return GetMember<int>("CaptchaRate"); } }
-		#endregion
 		#endregion
 
 		#region Methods

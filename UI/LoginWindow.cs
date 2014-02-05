@@ -22,13 +22,11 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
-		#region isxAion-20130130.1701
 		public AionEditBox Account { get { return new AionEditBox(GetMember("Account")); } }
 
 		public AionEditBox Password { get { return new AionEditBox(GetMember("Password")); } }
 
 		public AionButton OK { get { return new AionButton(GetMember("OK")); } }
-		#endregion
 		#endregion
 
 		#region Methods
