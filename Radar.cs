@@ -34,8 +34,12 @@ namespace Aion.isxAion
         #endregion
 
         #region Members
-        #region isxAion-1.5.1.4.0074
-        /// <summary>
+		#region isxAion-20130626.0141
+		public bool ShowingCraftingTables { get { return GetMember<bool>("ShowingCraftingTables"); } }
+		#endregion
+
+		#region isxAion-1.5.1.4.0074
+		/// <summary>
         /// Red dots show AgroNPCs on the radar
         /// </summary>
         public bool ShowingAggroNPCs
@@ -150,6 +154,14 @@ namespace Aion.isxAion
             }
         }
 
+		public bool ShowingPets
+		{
+			get
+			{
+				return GetMember<bool>("ShowingPets");
+			}
+		}
+
         public bool ShowingFish
         {
             get
@@ -208,6 +220,22 @@ namespace Aion.isxAion
             }
         }
 
+		public float MinZDiff
+		{
+			get
+			{
+				return GetMember<float>("MinZDiff");
+			}
+		}
+
+		public float MaxZDiff
+		{
+			get
+			{
+				return GetMember<float>("MaxZDiff");
+			}
+		}
+
         public bool ClipRadiusOn
         {
             get
@@ -242,8 +270,15 @@ namespace Aion.isxAion
         #endregion
 
         #region Methods
-        #region isxAion-1.5.1.4.0074
-        public bool FilterAggroNPCs()
+		#region isxAion-20130626.0141
+		public bool FilterCraftingTables()
+		{
+			return ExecuteMethod("FilterCraftingTables");
+		}
+		#endregion
+
+		#region isxAion-1.5.1.4.0074
+		public bool FilterAggroNPCs()
         {
             return ExecuteMethod("FilterAggroNPCs");
         }
@@ -313,6 +348,11 @@ namespace Aion.isxAion
         {
             return ExecuteMethod("FilterPortals");
         }
+
+		public bool FilterPets()
+		{
+			return ExecuteMethod("FilterPets");
+		}
 
         public bool FilterFish()
         {

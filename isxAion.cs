@@ -21,6 +21,10 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
+		#region isxAion-20130130.0912
+		public bool IsIgnoringChatsWithInvalidChars { get { return GetMember<bool>("IsIgnoringChatsWithInvalidChars"); } }
+		#endregion
+
 		public string Version
 		{
 			get
@@ -98,6 +102,20 @@ namespace Aion.isxAion
         {
             return ExecuteMethod("RebuildDB");
         }
+
+		#region isxAion-20130130.0912
+		/// <summary>
+		/// [This method will toggle on or off a feature that blocks any incoming chat that contains character symbols that
+		///  are considered invalid.  This includes any ascii character above 0xff except asian characters and Aion's custom
+		///  emoticons.  It should dramatically cut down on the amount of RMT spam.]
+		/// [This method is OFF by default; however, is persistent via the isxAion xml file once turned on.]
+		/// [When this feature is active, it also affects the Aion_onIncomingChatText event.]
+		/// </summary>
+		public bool IgnoreChatsWithInvalidChars()
+		{
+			return ExecuteMethod("IgnoreChatsWithInvalidChars");
+		}
+		#endregion
 		#endregion
 	}
 }

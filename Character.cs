@@ -7,7 +7,7 @@ using LavishScriptAPI;
 
 namespace Aion.isxAion
 {
-    public class Character : LavishScriptObject
+    public class Character : Entity
 	{
 		#region Constructors
         public Character(LavishScriptObject Obj)
@@ -22,17 +22,272 @@ namespace Aion.isxAion
 		#endregion
 
 		#region Members
+		#region isxAion-20130130.1907
+		public Entity Following { get { return new Entity(GetMember("Following")); } }
+
+		public uint FollowingID { get { return GetMember<uint>("FollowingID", "ID"); } }
+		#endregion
+
+		#region isxAion-20130130.1751
+		public bool OnFastTrackServer { get { return GetMember<bool>("OnFastTrackServer"); } }
+		#endregion
+
+		#region isxAion-20130130.1548
+		public Inventory Inventory { get { return new Inventory(GetMember("Inventory")); } }
+
+		/// <summary>
+		/// index between 1 and inventory.Used
+		/// </summary>
+		public InventoryItem InventoryByIndex(int index)
+		{
+			return new InventoryItem(GetMember("Inventory", index.ToString()));
+		}
+
+		public InventoryItem InventoryByID(int itemID)
+		{
+			return new InventoryItem(GetMember("Inventory", "id", itemID.ToString()));
+		}
+
+		/// <summary>
+		/// case insensitive
+		/// </summary>
+		public InventoryItem InventoryByName(string itemName)
+		{
+			return new InventoryItem(GetMember("Inventory", itemName.ToString()));
+		}
+
+		/// <summary>
+		/// Returns the first item that contains partialName in the name
+		/// case insensitive
+		/// </summary>
+		public InventoryItem InventoryByContains(string partialName)
+		{
+			return new InventoryItem(GetMember("Inventory", "NameContains", partialName.ToString()));
+		}
+
+		public Inventory Equipment { get { return new Inventory(GetMember("Equipment")); } }
+
+		/// <summary>
+		/// index between 1 and inventory.Used
+		/// </summary>
+		public InventoryItem EquipmentByIndex(int index)
+		{
+			return new InventoryItem(GetMember("Equipment", index.ToString()));
+		}
+
+		public InventoryItem EquipmentByID(int itemID)
+		{
+			return new InventoryItem(GetMember("Equipment", "id", itemID.ToString()));
+		}
+
+		/// <summary>
+		/// case insensitive
+		/// </summary>
+		public InventoryItem EquipmentByName(string itemName)
+		{
+			return new InventoryItem(GetMember("Equipment", itemName.ToString()));
+		}
+
+		/// <summary>
+		/// Returns the first item that contains partialName in the name
+		/// case insensitive
+		/// </summary>
+		public InventoryItem EquipmentByContains(string partialName)
+		{
+			return new InventoryItem(GetMember("Equipment", "NameContains", partialName.ToString()));
+		}
+
+		public Inventory SpecialCube { get { return new Inventory(GetMember("SpecialCube")); } }
+
+		/// <summary>
+		/// index between 1 and inventory.Used
+		/// </summary>
+		public InventoryItem SpecialCubeByIndex(int index)
+		{
+			return new InventoryItem(GetMember("SpecialCube", index.ToString()));
+		}
+
+		public InventoryItem SpecialCubeByID(int itemID)
+		{
+			return new InventoryItem(GetMember("SpecialCube", "id", itemID.ToString()));
+		}
+
+		/// <summary>
+		/// case insensitive
+		/// </summary>
+		public InventoryItem SpecialCubeByName(string itemName)
+		{
+			return new InventoryItem(GetMember("SpecialCube", itemName.ToString()));
+		}
+
+		/// <summary>
+		/// Returns the first item that contains partialName in the name
+		/// case insensitive
+		/// </summary>
+		public InventoryItem SpecialCubeByContains(string partialName)
+		{
+			return new InventoryItem(GetMember("SpecialCube", "NameContains", partialName.ToString()));
+		}
+
+		public Inventory Warehouse { get { return new Inventory(GetMember("Warehouse")); } }
+
+		/// <summary>
+		/// index between 1 and inventory.Used
+		/// </summary>
+		public InventoryItem WarehouseByIndex(int index)
+		{
+			return new InventoryItem(GetMember("Warehouse", index.ToString()));
+		}
+
+		public InventoryItem WarehouseByID(int itemID)
+		{
+			return new InventoryItem(GetMember("Warehouse", "id", itemID.ToString()));
+		}
+
+		/// <summary>
+		/// case insensitive
+		/// </summary>
+		public InventoryItem WarehouseByName(string itemName)
+		{
+			return new InventoryItem(GetMember("Warehouse", itemName.ToString()));
+		}
+
+		/// <summary>
+		/// Returns the first item that contains partialName in the name
+		/// case insensitive
+		/// </summary>
+		public InventoryItem WarehouseByContains(string partialName)
+		{
+			return new InventoryItem(GetMember("Warehouse", "NameContains", partialName.ToString()));
+		}
+		#endregion
+
+		#region isxAion-20130130.1548
+		/// <summary>
+		/// Flight time percent
+		/// </summary>
+		public float FlightTimePct { get { return GetMember<float>("FlightTime", "pct"); } }
+		#endregion
+
+		#region isxAion-20130130.1433
+		/// <summary>
+		/// Mana percent
+		/// </summary>
+		public float MPPct { get { return GetMember<float>("MP", "pct"); } }
+
+		/// <summary>
+		/// Experience percent
+		/// </summary>
+		public float XPPct { get { return GetMember<float>("XP", "pct"); } }
+
+		/// <summary>
+		/// Divine points percent
+		/// </summary>
+		public float DPPct { get { return GetMember<float>("DP", "pct"); } }
+
+		//isxAion-20130130.1433 Moved the "IsFollowing" MEMBER from the 'entity' datatype to the 'character' datatype
+		/// <summary>
+		/// Returns TRUE if the entity is a PC and is currently auto-following another PC.
+		/// </summary>
+		public bool IsFollowing { get { return GetMember<bool>("IsFollowing"); } }
+		#endregion
+
+		#region isxAion-20130130.1159
+		/// <summary>
+		/// TRUE while the "gathering window" is visible
+		/// </summary>
+		public bool IsGathering { get { return GetMember<bool>("IsGathering"); } }
+		#endregion
+
+		#region isxAion-20130130.0975
+		public Group Group { get { return new Group(GetMember("Group")); } }
+
+		/// <summary>
+		/// index is between 1 and Group.Size
+		/// </summary>
+		public GroupMember GroupMember(int index)
+		{
+			return new GroupMember(GetMember("Group", index.ToString()));
+		}
+
+		/// <summary>
+		/// name is the name of the group member
+		/// Case insensitive
+		/// </summary>
+		public GroupMember GroupMember(string name)
+		{
+			return new GroupMember(GetMember("Group", name.ToString()));
+		}
+		#endregion
+
+		#region isxAion-20130130.0971
+		//isxAion-20130130.1808 IsGliding moved to Entity
+		//public bool IsGliding { get { return GetMember<bool>("IsGliding"); } }
+		#endregion
+
+		#region isxAion-20130130.0949
+		public int NumAbilities { get { return GetMember<int>("NumAbilities"); } }
+
+		/// <summary>
+		/// Retrieving abilities by ID is the most efficient, due to how things are handled.  However, there are no
+		/// server calls for retrieving abilities by index or name and the differences in retrieval methods are negligible.
+		/// index between 1 and character.NumAbilities
+		/// </summary>
+		public Ability AbilityIndex(int index)
+		{
+			return new Ability(GetMember("Ability", index.ToString()));
+		}
+
+		/// <summary>
+		/// Retrieving abilities by ID is the most efficient, due to how things are handled.  However, there are no
+		/// server calls for retrieving abilities by index or name and the differences in retrieval methods are negligible.
+		/// </summary>
+		public Ability Ability(int abilityID)
+		{
+			return new Ability(GetMember("Ability", "id", abilityID.ToString()));
+		}
+
+		/// <summary>
+		/// Retrieving abilities by ID is the most efficient, due to how things are handled.  However, there are no
+		/// server calls for retrieving abilities by index or name and the differences in retrieval methods are negligible.
+		/// Case insensitive
+		/// </summary>
+		public Ability Ability(string abilityName)
+		{
+			return new Ability(GetMember("Ability", abilityName.ToString()));
+		}
+		#endregion
+
+		#region isxAion-20130130.0912
+		// isxAion-20130130.0971 Removed the "Following" MEMBER from the 'character' datatype.
+		//public bool Following
+		//{
+		//	get
+		//	{
+		//		return GetMember<bool>("Following");
+		//	}
+		//}
+		// isxAion-20130130.0971 Removed the "GroupLeaderID" MEMBER from the 'character' datatype.
+		//public uint GroupLeaderID
+		//{
+		//	get
+		//	{
+		//		return GetMember<uint>("GroupLeaderID");
+		//	}
+		//}		
+		#endregion
         #region isxAion-1.5.1.4.0194
-        /// <summary>
-        /// Seconds remaining on the current spell/ability cast
-        /// </summary>
-        public float CastTimeRemaining
-        {
-            get
-            {
-                return GetMember<float>("CastTimeRemaining");
-            }
-        }
+		//isxAion-20130626.0128 Removed the "CastTimeRemaining" MEMBER of the 'character' datatype.
+		///// <summary>
+		///// Seconds remaining on the current spell/ability cast
+		///// </summary>
+		//public float CastTimeRemaining
+		//{
+		//	get
+		//	{
+		//		return GetMember<float>("CastTimeRemaining");
+		//	}
+		//}
 
         /// <summary>
         /// Seconds you have been casting the current spell/ability
@@ -46,21 +301,23 @@ namespace Aion.isxAion
         }
         #endregion
         #region isxAion-1.5.1.4.0074
-        public int HP
-        {
-            get
-            {
-                return GetMember<int>("HP");
-            }
-        }
+		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
+		//public int HP
+		//{
+		//	get
+		//	{
+		//		return GetMember<int>("HP");
+		//	}
+		//}
 
-        public int MaxHP
-        {
-            get
-            {
-                return GetMember<int>("MaxHP");
-            }
-        }
+		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
+		//public int MaxHP
+		//{
+		//	get
+		//	{
+		//		return GetMember<int>("MaxHP");
+		//	}
+		//}
 
         public int MP
         {
@@ -134,13 +391,14 @@ namespace Aion.isxAion
             }
         }
 
-        public int Level
-        {
-            get
-            {
-                return GetMember<int>("Level");
-            }
-        }
+		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
+		//public int Level
+		//{
+		//	get
+		//	{
+		//		return GetMember<int>("Level");
+		///	}
+		//}
 
         public int Kinah
         {
@@ -174,6 +432,9 @@ namespace Aion.isxAion
             }
         }
 
+		/// <summary>
+		/// Also return TRUE if you're using an item or entity
+		/// </summary>
         public bool IsCasting
         {
             get
@@ -183,34 +444,133 @@ namespace Aion.isxAion
         }
         #endregion
 
-        public Entity ToEntity
-		{
-			get
-			{
-				return new Entity(GetMember("ToEntity"));
-			}
-		}
-        public Entity Target
-        {
-            get
-            {
-                return new Entity(GetMember("Target"));
-            }
-        }
+		// isxAion-20130130.0912 Removed the "ToEntity" MEMBER of the 'character' datatype.
+		//public Entity ToEntity
+		//{
+		//	get
+		//	{
+		//		return new Entity(GetMember("ToEntity"));
+		//	}
+		//}
+		// isxAion-20130130.0912 The 'character' datatype now directly inherits all members/methods of the 'entity' datatype.
+		//public Entity Target
+		//{
+		//	get
+		//	{
+		//		return new Entity(GetMember("Target"));
+		//	}
+		//}
         #endregion
 
 		#region Methods
-        #region isxAion-1.5.1.4.0236
-        public bool ToggleResting()
+		#region isxAion-20130130.1907
+		/// <summary>
+		/// It is safe to use this method at any point.  If the character is not currently on 'auto follow' the method will do nothing.
+		/// </summary>
+		/// <returns></returns>
+		public bool StopAutoFollow()
+		{
+			return ExecuteMethod("StopAutoFollow");
+		}
+		#endregion
+
+		#region isxAion-20130130.1839
+		public bool Quit()
+		{
+			return ExecuteMethod("Quit");
+		}
+
+		public bool Logout()
+		{
+			return ExecuteMethod("Logout");
+		}
+
+		public bool Characters()
+		{
+			return ExecuteMethod("Characters");
+		}
+		#endregion
+
+		#region isxAion-20130130.1751
+		/// <summary>
+		///  This method will avoid the annoying popup window; however, it will still do all of the appropriate checks.
+		///  Therefore, the script will need to check for failure by accessing entity.IsMentor.
+		/// </summary>
+		public bool MentorTarget()
+		{
+			return ExecuteMethod("MentorTarget");
+		}
+
+		/// <summary>
+		/// This method will silently fail if the character is not currently mentoring.
+		/// i.e., you do not have to check "IsMentor" before calling this method.
+		/// </summary>
+		public bool StopMentoring()
+		{
+			return ExecuteMethod("StopMentoring");
+		}
+		#endregion
+
+		#region isxAion-20130130.0912
+		/// <summary>
+		/// Toggle auto-follow on your current target
+		/// </summary>
+		public new bool Follow()
+		{
+			return ExecuteMethod("Follow");
+		}
+
+		/// <summary>
+		/// Toggle auto-follow on the ID# of the player you wish to follow.
+		/// </summary>
+		public bool Follow(int id)
+		{
+			return ExecuteMethod("Follow", id.ToString());
+		}
+
+		public bool InviteToGroup(string name)
+		{
+			return ExecuteMethod("InviteToGroup", name);
+		}
+
+		/// <summary>
+		/// ~ This function duplicates the action that occurs when you click on an entity after it has already been targetted.
+		///   For non-attackable types, it will move you to the target and interact with it.  For attackable targets, it will
+		///   move you to the target and begin auto-attack.  
+		/// ~ If the "No Interaction" parameter is used, then for NON-attackable types, you will simply move to the target and stop.
+		/// ~ This method currently works for PCs, NPCs, gatherables, lootables, and most all interactable objects that can be 
+		///   targeted.
+		/// ~ Unlike the in-game mechanics, if you try to "ClickTarget" on a corpse that you cannot loot, or a gatherable that is
+		///   above your level, the method will do nothing.
+		/// </summary>
+		public bool ClickTarget(bool noInteraction = false)
+		{
+			if (noInteraction)
+				return ExecuteMethod("ClickTarget", "No Interaction");
+			else
+				return ExecuteMethod("ClickTarget");
+		}
+		#endregion
+		#region isxAion-1.5.1.4.0236
+		/// <summary>
+		/// 'uses' the ability (in your abilities list) called "Toggle Rest"
+		/// </summary>
+		public bool ToggleResting()
         {
             return ExecuteMethod("ToggleResting");
         }
 
+		/// <summary>
+		/// 'uses' the ability (in your abilities list) called "Toggle Combat"
+		/// </summary>
         public bool ToggleCombat()
         {
             return ExecuteMethod("ToggleCombat");
         }
 
+		/// <summary>
+		/// 'uses' the ability (in your abilities list) called "Change Weapon"
+		/// </summary>
         public bool ChangeWeapon()
         {
             return ExecuteMethod("ChangeWeapon");
@@ -260,7 +620,6 @@ namespace Aion.isxAion
         /// <summary>
         /// Stop all movement
         /// </summary>
-        /// <returns></returns>
         public bool StopMoving()
         {
             return ExecuteMethod("StopMoving");
@@ -268,6 +627,7 @@ namespace Aion.isxAion
 
         /// <summary>
         /// Spread wings and take flight
+		/// 'uses' the ability (in your abilities list) called "Toggle Flight/Landing"
         /// </summary>
         public bool TakeOff()
         {
@@ -276,6 +636,7 @@ namespace Aion.isxAion
 
         /// <summary>
         /// Stop flying/Put your wings away
+		/// 'uses' the ability (in your abilities list) called "Toggle Flight/Landing"
         /// </summary>
         public bool Land()
         {

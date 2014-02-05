@@ -65,7 +65,7 @@ namespace Aion.isxAion
         }
 		#endregion
 
-		~Event()
+		public Event()
 		{
             Attach("Aion_onIncomingChatText", onIncomingText);
             Attach("Aion_onCastAbility", onCastAbility);
@@ -74,7 +74,7 @@ namespace Aion.isxAion
             Attach("Aion_onEntityDespawned", onEntityDespawned);
 		}
 
-		public Event()
+		~Event()
 		{
             Detach("Aion_onIncomingChatText", onIncomingText);
             Detach("Aion_onCastAbility", onCastAbility);

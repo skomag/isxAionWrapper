@@ -13,6 +13,48 @@ namespace Aion.isxAion
 		{
 		}
 
+		#region isxAion-20130626.0193
+		public CraftingWindow CraftingWindow { get { return new CraftingWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1979
+		public SelfRessurectionWindow SelfRessurectionWindow { get { return new SelfRessurectionWindow(); } }
+
+		public RessurectionFromOthersWindow RessurectionFromOthersWindow { get { return new RessurectionFromOthersWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1808
+		public ConversationWindow ConversationWindow { get { return new ConversationWindow(); } }
+
+		public TeleportWindow TeleportWindow { get { return new TeleportWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1792
+		public CharSelectWindow CharSelectWindow { get { return new CharSelectWindow(); } }
+		
+		public PINWindow PINWindow { get { return new PINWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1735
+		public EULAWindow EULAWindow { get { return new EULAWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1701
+		public LoginWindow LoginWindow { get { return new LoginWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1568
+		public ChainSkillWindow ChainSkillWindow { get { return new ChainSkillWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1407
+		public LootWindow LootWindow { get { return new LootWindow(); } }
+		#endregion
+
+		#region isxAion-20130130.1378
+		public QuestionWindow QuestionWindow { get { return new QuestionWindow(); } }
+		#endregion
+
 		public Aion Aion()
 		{
 			return new Aion();

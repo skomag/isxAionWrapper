@@ -42,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\isxAionWrapper.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -62,17 +63,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability.cs" />
+    <Compile Include="AbilityInfo.cs" />
     <Compile Include="AbyssRank.cs" />
+    <Compile Include="AionButton.cs" />
+    <Compile Include="AionEditBox.cs" />
+    <Compile Include="AionUIText.cs" />
+    <Compile Include="AionWidget.cs" />
+    <Compile Include="AionWindow.cs" />
+    <Compile Include="Buff.cs" />
+    <Compile Include="ChainSkill.cs" />
+    <Compile Include="ChainSkillWindow.cs" />
+    <Compile Include="CharSelectWindow.cs" />
+    <Compile Include="ConversationWindow.cs" />
+    <Compile Include="CraftingWindow.cs" />
+    <Compile Include="EquipmentItem.cs" />
+    <Compile Include="EULAWindow.cs" />
+    <Compile Include="GatherData.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Aion.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="Events\EventArgs.cs" />
     <Compile Include="Extension.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="GroupMember.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="InventoryItem.cs" />
     <Compile Include="isxAion.cs" />
+    <Compile Include="ItemInfo.cs" />
+    <Compile Include="ListItem.cs" />
+    <Compile Include="LoginWindow.cs" />
+    <Compile Include="LootItem.cs" />
+    <Compile Include="LootWindow.cs" />
+    <Compile Include="NPCInfo.cs" />
+    <Compile Include="PINWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionWindow.cs" />
     <Compile Include="Radar.cs" />
+    <Compile Include="RessurectionFromOthersWindow.cs" />
+    <Compile Include="SelfRessurectionWindow.cs" />
+    <Compile Include="SpecialCubeItem.cs" />
+    <Compile Include="TeleportWindow.cs" />
+    <Compile Include="Template.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="WarehouseItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
